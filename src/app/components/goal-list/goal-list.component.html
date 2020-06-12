@@ -1,0 +1,22 @@
+<p>goal-list works!</p>
+
+<h1>My Goals</h1>
+  <hr>
+  <ul class="heroes">
+      <li *ngFor='let goal of goals'
+        [class.selected]="goal === selectedGoal" 
+        (click)="onSelect(goal)">
+        <span class="badge">{{goal.id}}</span> {{goal.name}}
+      </li>
+  </ul>
+  <div *ngIf="selectedGoal">
+      <h2> {{ selectedGoal.name | uppercase }} Deatils</h2>
+      <div> <span>id:</span> {{selectedGoal.id}}</div>
+      <div>
+          <label> Name:
+            <input [(ngModel)]="selectedGoal.name" placeholder="name">
+            <input [(ngModel)]="selectedGoal.description" placeholder="name">
+        </label>
+      </div>
+
+  </div>
