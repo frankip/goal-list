@@ -1,4 +1,3 @@
-<p>goal-list works!</p>
 
 <h1>My Goals</h1>
   <hr>
@@ -8,15 +7,17 @@
         (click)="onSelect(goal)">
         <span class="badge">{{goal.id}}</span> {{goal.name}}
       </li>
+      <div *ngIf="selectedGoal">
+        <h2> {{ selectedGoal.name | uppercase }} Details</h2>
+        <div> <span>id:</span> {{selectedGoal.id}}</div>
+        <div>
+            <label> Name:
+              <input [(ngModel)]="selectedGoal.name" placeholder="name">
+              <!-- <input [(ngModel)]="selectedGoal.description" placeholder="name"> -->
+              <h4>Description</h4>
+              <p>{{selectedGoal.description}}</p>
+          </label>
+        </div>
+    </div>
   </ul>
-  <div *ngIf="selectedGoal">
-      <h2> {{ selectedGoal.name | uppercase }} Deatils</h2>
-      <div> <span>id:</span> {{selectedGoal.id}}</div>
-      <div>
-          <label> Name:
-            <input [(ngModel)]="selectedGoal.name" placeholder="name">
-            <input [(ngModel)]="selectedGoal.description" placeholder="name">
-        </label>
-      </div>
-
-  </div>
+ 
