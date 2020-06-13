@@ -1,0 +1,14 @@
+
+<div *ngIf="goal">
+    <h2> {{ goal.name | uppercase }} Details</h2>
+    <div> <span>id:</span> {{goal.id}}</div>
+    <div>
+        <label> Name:
+          <input [(ngModel)]="goal.name" placeholder="name">
+          <!-- <input [(ngModel)]="selectedGoal.description" placeholder="name"> -->
+          <h4>Description</h4>
+          <p>{{goal.description}}</p>
+      </label>
+    </div>
+</div>
+    
