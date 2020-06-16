@@ -2,12 +2,14 @@
 <h1>My Goals</h1>
   <hr>
   <ul class="heroes">
-      <li *ngFor='let goal of goals'
+      <li *ngFor='let goal of goals; let i = index'
         [class.selected]="goal === selectedGoal" 
-        (click)="onSelect(goal)">
+        (click)="onSelect(goal)"
+        appStrikethrough
+        >
         <span class="badge">{{goal.id}}</span> {{goal.name}}
       </li>
     </ul>
     
-    <app-goal-details [goal]="selectedGoal"></app-goal-details>
+    <app-goal-details [goal]="selectedGoal" (isCompete)='deleteGoal($event)'></app-goal-details>
  

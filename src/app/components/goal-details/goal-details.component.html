@@ -1,15 +1,18 @@
+<div class="container">
 
-<div *ngIf="goal">
-    <h2> {{ goal.name | uppercase }} Details</h2>
-    <div> <span>id:</span> {{goal.id}}</div>
-    <div>
-        <label> Name:
-          <input [(ngModel)]="goal.name" placeholder="name">
-          <!-- <input [(ngModel)]="selectedGoal.description" placeholder="name"> -->
-          <h4>Description</h4>
-          <p>{{goal.description}}</p>
-      </label>
-    </div>
-    <button (click)= 'goalComplete(true)'>Complete</button>
+  <div *ngIf="goal">
+      <h2> {{ goal.name | uppercase }} Details</h2>
+      <div> <span>id:</span> {{goal.id}}</div>
+      <div>
+          <label> Name:
+            <input [(ngModel)]="goal.name" placeholder="name">
+            <!-- <input [(ngModel)]="selectedGoal.description" placeholder="name"> -->
+            <h4>Description</h4>
+            <p>{{goal.description}}</p>
+        </label>
+      </div>
+      <button class="btn btn-outline-success" (click)= 'goalComplete(true)'>Complete</button>
+      <button class="btn btn-outline-danger" (click)= 'goalDelete(true)'>Delete</button>
+  </div>
 </div>
     

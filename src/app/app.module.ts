@@ -5,14 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GoalListComponent } from './components/goal-list/goal-list.component';
 import { FormsModule } from '@angular/forms';
-import { GoalDetailsComponent } from './components/goal-details/goal-details.component'; // <-- NgModel lives here
+import { GoalDetailsComponent } from './components/goal-details/goal-details.component';
+import { StrikethroughDirective } from './strikethrough.directive'; // <-- NgModel lives here
 
 
 @NgModule({
   declarations: [
     AppComponent,
     GoalListComponent,
-    GoalDetailsComponent
+    GoalDetailsComponent,
+    StrikethroughDirective
   ],
   imports: [
     BrowserModule,

@@ -34,4 +34,15 @@ export class GoalListComponent implements OnInit {
     this.selectedGoal= goal;
   }
 
+  deleteGoal(isComplete){
+    console.log('inafika pia');
+    // if (isComplete) {
+    //   let toDelete = confirm(`Are you sure you want to delete ${this.goals[index].name}?`)
+
+    //   if (toDelete){
+    //     this.goals.splice(index,1)
+    //   }
+    // }
+  }
+
 }

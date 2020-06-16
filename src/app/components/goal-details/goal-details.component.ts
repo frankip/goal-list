@@ -13,8 +13,12 @@ export class GoalDetailsComponent implements OnInit {
   @Output() isComplete =  new EventEmitter();
 
   goalComplete(goal){
-    console.log('inafika');
     this.isComplete.emit();
+  }
+  
+  goalDelete(complete:boolean){
+    // console.log('inafika');
+    this.isComplete.emit(complete)
   }
 
   constructor() { }
