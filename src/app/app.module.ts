@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { GoalListComponent } from './components/goal-list/goal-list.component';
 import { FormsModule } from '@angular/forms';
 import { GoalDetailsComponent } from './components/goal-details/goal-details.component';
-import { StrikethroughDirective } from './strikethrough.directive'; // <-- NgModel lives here
+import { StrikethroughDirective } from './strikethrough.directive';
+import { GoalFormComponent } from './components/goal-form/goal-form.component'; // <-- NgModel lives here
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { StrikethroughDirective } from './strikethrough.directive'; // <-- NgMod
     AppComponent,
     GoalListComponent,
     GoalDetailsComponent,
-    StrikethroughDirective
+    StrikethroughDirective,
+    GoalFormComponent
   ],
   imports: [
     BrowserModule,
