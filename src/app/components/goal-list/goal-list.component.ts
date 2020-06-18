@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { GoalService } from 'src/app/goal-service/goal.service';
 import { Quote } from '../quote-class/quote';
 import { HttpClient } from '@angular/common/http';
+import { QuoteRequestService } from 'src/app/quote-http/quote-request.service';
 
 
 
@@ -24,24 +25,13 @@ export class GoalListComponent implements OnInit {
   
   
 
-  constructor(goalService:GoalService, private http:HttpClient) {
+  constructor(goalService:GoalService, private http:HttpClient, private quoteService:QuoteRequestService) {
     this.goals = goalService.getGoals()
   }
 
   ngOnInit(): void {
-    interface ApiResponse {
-      author: string;
-      quote: string
-    }
-    this.http.get<ApiResponse>("http://quotes.stormconsultancy.co.uk/random.json").subscribe(data => {
-      this.quote = new Quote(data.author, data.quote)
-    }, err=> {
-      this.quote = new Quote("Wonstom churchill", "Never give up")
-      console.log('an error occured');
-      
-    }
-    )
-
+    this.quoteService.quoteRequest()
+    this.quote = this.quoteService.quote
   }
 
 

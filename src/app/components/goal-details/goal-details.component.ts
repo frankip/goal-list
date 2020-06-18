@@ -10,15 +10,15 @@ import { Goal } from '../goal';
 export class GoalDetailsComponent implements OnInit {
 
   @Input() goal:Goal;
-  @Output() isComplete =  new EventEmitter();
+  @Output() isComplete =  new EventEmitter<boolean>();
 
-  goalComplete(goal){
+  goalComplete(deletegoal: boolean){
     this.isComplete.emit();
   }
   
-  goalDelete(complete:boolean){
+  goalDelete(deletegoal:boolean){
     // console.log('inafika');
-    this.isComplete.emit(complete)
+    this.isComplete.emit(deletegoal)
   }
 
   constructor() { }
