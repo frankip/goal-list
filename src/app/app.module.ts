@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { GoalDetailsComponent } from './components/goal-details/goal-details.component';
 import { StrikethroughDirective } from './strikethrough.directive';
 import { GoalFormComponent } from './components/goal-form/goal-form.component'; // <-- NgModel lives here
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { GoalFormComponent } from './components/goal-form/goal-form.component'; 
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
