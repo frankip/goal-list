@@ -10,6 +10,7 @@ import { StrikethroughDirective } from './strikethrough.directive';
 import { GoalFormComponent } from './components/goal-form/goal-form.component'; // <-- NgModel lives here
 import { HttpClientModule } from '@angular/common/http';
 import { AboutComponent } from './components/about/about.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AboutComponent } from './components/about/about.component';
     GoalDetailsComponent,
     StrikethroughDirective,
     GoalFormComponent,
-    AboutComponent
+    AboutComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

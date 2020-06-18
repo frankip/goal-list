@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Goal } from '../goal';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { GoalService } from 'src/app/goal-service/goal.service';
 
 
 @Component({
@@ -21,9 +23,11 @@ export class GoalDetailsComponent implements OnInit {
     this.isComplete.emit(deletegoal)
   }
 
-  constructor() { }
+  constructor(private route:ActivatedRoute, private service:GoalService) { }
 
   ngOnInit(): void {
+    let id = this.route.snapshot.paramMap.get('id');
+    this.goal = this.service.getGoal(id)
   }
 
 }

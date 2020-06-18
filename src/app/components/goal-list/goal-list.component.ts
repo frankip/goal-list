@@ -5,6 +5,7 @@ import { GoalService } from 'src/app/goal-service/goal.service';
 import { Quote } from '../quote-class/quote';
 import { HttpClient } from '@angular/common/http';
 import { QuoteRequestService } from 'src/app/quote-http/quote-request.service';
+import { Router } from '@angular/router';
 
 
 
@@ -25,13 +26,17 @@ export class GoalListComponent implements OnInit {
   
   
 
-  constructor(goalService:GoalService, private http:HttpClient, private quoteService:QuoteRequestService) {
+  constructor(goalService:GoalService, private http:HttpClient, private quoteService:QuoteRequestService, private router: Router) {
     this.goals = goalService.getGoals()
   }
 
   ngOnInit(): void {
     this.quoteService.quoteRequest()
     this.quote = this.quoteService.quote
+  }
+
+  goToUrl(id){
+    this.router.navigate(['/goals',id])
   }
 
 

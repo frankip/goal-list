@@ -1,7 +1,7 @@
 
 <h1>My Goals</h1>
   <hr>
-  <div class="row">
+  <div class="row conatiner">
     <div class="col-md-6">
   <ul class="heroes">
       <li *ngFor='let goal of goals; let i = index'
@@ -12,7 +12,7 @@
         <span class="badge">{{goal.id}}</span> {{goal.name}}
       </li>
     </ul>
-    
+    <a  (click)='goToUrl(goal.id)'>View Details</a>
     <app-goal-details [goal]="selectedGoal" (isCompete)='deleteGoal($event)'></app-goal-details>
 </div>
 <div class="col-md-6">
@@ -21,7 +21,7 @@
 
 <hr>
 
-<div class="row">
+<div class="container">
   <blockquote class="blockquote text-center">
     <p class="mb-0">{{quote.quote}}</p>
     <footer class="blockquote-footer"><cite>{{quote.author}}</cite></footer>
